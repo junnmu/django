@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portal de Acompanhamento de Estágios</title>
+    </head>
+    <body>
+        <p>Aluno: {{ aluno.nome }}</p>
+        {% if professores %}
+            {% for professor in professores %}
+                <a href="{% url 'professor_por_id' aluno.id professor.id %}"><p>Professor: {{ professor.nome }}</p></a>
+            {% endfor %}
+        {% else %}
+            <p>Não há professores!</p>
+        {% endif %}
+    </body>
+</html>

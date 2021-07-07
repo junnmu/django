@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portal de Acompanhamento de Estágios</title>
+    </head>
+    <body>
+        <form action="{% url 'solicitar_orientacao' aluno.id professor.id %}" method="post">
+            {% csrf_token %}
+            <p>Professor: {{ professor.nome }}</p>
+            <button type="submit">Solicitar Orientação</button>
+        </form>
+    </body>
+</html>
